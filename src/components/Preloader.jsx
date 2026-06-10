@@ -3,9 +3,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 
+const modelPath = import.meta.env.BASE_URL + 'vitta-3d-model.glb';
+
 /* ───────────── Preloader 3D Mesh ───────────── */
 function PreloaderMesh() {
-  const { scene } = useGLTF('/Hitem3d-1781019462217.glb');
+  const { scene } = useGLTF(modelPath);
   const meshRef = useRef();
 
   const clonedScene = useMemo(() => {
@@ -150,4 +152,6 @@ const Preloader = ({ onComplete }) => {
 export default Preloader;
 
 // Preload model
-useGLTF.preload('/Hitem3d-1781019462217.glb');
+if (typeof window !== 'undefined') {
+  useGLTF.preload(import.meta.env.BASE_URL + 'vitta-3d-model.glb');
+}
