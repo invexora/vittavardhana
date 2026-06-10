@@ -119,9 +119,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fluid font scaling — Perfect miniaturization */
+/* Fluid font scaling — Premium Vanquish Approach */
 @media screen and (max-width: 1440px) {
-  html { font-size: 1.11vw; } /* 16px at 1440px, scaling linearly downwards */
+  html { font-size: calc(0.3rem + 0.8vw); }
+}
+@media screen and (max-width: 768px) {
+  html { font-size: calc(0.82rem + 0.89vw); }
+}
+@media screen and (max-width: 480px) {
+  html { font-size: calc(0.75rem + 1.25vw); }
 }
 
 /* Lenis smooth scroll compatibility */
@@ -170,7 +176,13 @@ ul, ol { list-style: none; }
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2.77vw; /* Fluid padding replacing 40px */
+  padding: 0 2.77vw;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
 .section {
@@ -302,6 +314,16 @@ ul, ol { list-style: none; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-lg);
+}
+
+@media screen and (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-md);
+  }
+  .grid-auto {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -964,7 +986,27 @@ textarea.form-input {
   color: var(--color-subtle);
 }
 
-/* Footer scaling maintained perfectly for mobile */
+@media screen and (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+  .footer-contact-item {
+    justify-content: center;
+  }
+  .footer-socials {
+    justify-content: center;
+  }
+  .brand-logo-wrapper {
+    align-self: center !important;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+}
 
 
 /* ─────────────── 12. HERO — Immersive 3D (vanquish.so-inspired) ─────────────── */
@@ -1256,7 +1298,27 @@ textarea.form-input {
 @media (max-width: 768px) {
   .hero { padding-top: 72px; min-height: auto; padding-bottom: 60px; }
   .hero-immersive { padding-top: 0; min-height: 100svh; padding-bottom: 0; }
-  /* .hero-grid { grid-template-columns: 1fr; gap: 40px; } - Removed for pure scaling */
+  
+  .hero-split-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-xl);
+    padding-top: 100px;
+  }
+  .hero-left-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-right-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
   .hero-scroll-down { display: flex; bottom: 16px; }
   .hero-socials { display: none; }
   .hero-content-center { padding: 0 8px; }
@@ -1313,7 +1375,15 @@ textarea.form-input {
   color: var(--color-muted);
 }
 
-/* Stats strip remains 4 columns on mobile */
+@media screen and (max-width: 768px) {
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+}
 
 
 /* ─────────────── 14. TESTIMONIALS ─────────────── */
@@ -2895,6 +2965,12 @@ textarea.form-input {
   gap: var(--space-lg);
 }
 
+@media (max-width: 768px) {
+  .news-articles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .news-article-card {
   display: flex;
   flex-direction: column;
@@ -3127,7 +3203,7 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
-  /* .contact-cards-grid { grid-template-columns: 1fr; } */
+  .contact-cards-grid { grid-template-columns: 1fr; }
 }
 
 .contact-info-card {
@@ -3181,7 +3257,7 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
-  /* .contact-form-grid { grid-template-columns: 1fr; } */
+  .contact-form-grid { grid-template-columns: 1fr; }
 }
 
 .contact-form-card {
@@ -3209,7 +3285,7 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
-  /* .contact-form-row { grid-template-columns: 1fr; } */
+  .contact-form-row { grid-template-columns: 1fr; }
 }
 
 .contact-form-textarea {

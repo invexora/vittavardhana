@@ -351,6 +351,13 @@ const Services = () => {
           .bento-span-full {
             grid-column: auto;
           }
+          .bento-card {
+            padding: 20px;
+          }
+          .services-hero {
+            padding-top: 100px !important;
+            padding-bottom: 40px !important;
+          }
         }
       `}</style>
     </div>

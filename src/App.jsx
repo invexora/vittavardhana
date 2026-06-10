@@ -12,6 +12,7 @@ import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import ContactUs from './pages/ContactUs';
+import News from './pages/News';
 
 // Animations
 import { initSmoothScroll, refreshScrollTriggers } from './lib/animations';
@@ -68,6 +69,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/service/:id" element={<ServiceDetail />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/news" element={<News />} />
           {/* Fallback redirect */}
           <Route path="*" element={<Home />} />
         </Routes>
