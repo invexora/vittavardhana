@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invexora - Financial Intelligence Amplified</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#cfbcff",
+                        "on-primary": "#381e72",
+                        "surface-container-low": "#1d1b20",
+                        "surface-container-lowest": "#0f0d13",
+                        "tertiary-fixed": "#ffdf93",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1f1635",
+                        "error": "#ffb4ab",
+                        "secondary": "#cdc0e9",
+                        "on-tertiary": "#3e2e00",
+                        "surface-container-highest": "#36343a",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-container": "#211f24",
+                        "surface-variant": "#36343a",
+                        "outline-variant": "#494551",
+                        "on-secondary-container": "#bfb2da",
+                        "surface-dim": "#141218",
+                        "surface-bright": "#3b383e",
+                        "surface-tint": "#cfbcff",
+                        "primary-container": "#6750a4",
+                        "on-primary-fixed": "#22005d",
+                        "surface-container-high": "#2b292f",
+                        "on-tertiary-container": "#503d00",
+                        "secondary-container": "#4d4465",
+                        "inverse-surface": "#e6e0e9",
+                        "primary-fixed-dim": "#cfbcff",
+                        "background": "#141218",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "surface": "#141218",
+                        "on-primary-container": "#e0d2ff",
+                        "inverse-on-surface": "#322f35",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "outline": "#948e9c",
+                        "on-secondary": "#342b4b",
+                        "on-surface": "#e6e0e9",
+                        "on-surface-variant": "#cbc4d2",
+                        "primary-fixed": "#e9ddff",
+                        "inverse-primary": "#6750a4",
+                        "tertiary-container": "#c9a74d",
+                        "on-background": "#e6e0e9",
+                        "tertiary": "#e7c365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["DM Sans", "sans-serif"],
+                        "display": ["DM Sans", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'DM Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar from JSON -->
+<header class="bg-zinc-950 docked full-width top-0 border-b border-zinc-800 flex justify-between items-center px-4 h-14 w-full z-40 sticky">
+<div class="flex items-center gap-8">
+<div class="text-lg font-bold tracking-tighter text-white flex items-center gap-2">
+                Inside Data
+                <span class="text-[10px] bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full font-medium tracking-wide uppercase">Beta</span>
+</div>
+<nav class="hidden md:flex items-center gap-6 font-dm-sans text-sm tracking-tight">
+<a class="text-white border-b-2 border-violet-600 pb-1 hover:text-white transition-colors cursor-pointer active:opacity-80" href="#">Markets</a>
+<a class="text-zinc-400 hover:text-white transition-colors cursor-pointer active:opacity-80" href="#">Sectors</a>
+<a class="text-zinc-400 hover:text-white transition-colors cursor-pointer active:opacity-80" href="#">Signals</a>
+<a class="text-zinc-400 hover:text-white transition-colors cursor-pointer active:opacity-80" href="#">Advisors</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-400 hover:text-white transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="text-zinc-400 hover:text-white transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1080px] mx-auto px-6 md:px-8 flex flex-col gap-[80px] py-[80px]">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center max-w-3xl mx-auto gap-6 pt-12 md:pt-20">
+<span class="text-sm font-semibold tracking-wide text-primary uppercase bg-surface-container-high px-4 py-1.5 rounded-full border border-outline-variant">Built for SEBI-Registered Professionals</span>
+<h1 class="text-5xl md:text-7xl font-display font-black tracking-tight leading-tight text-on-surface">
+                Your Financial Intelligence. <br/><span class="text-primary">Amplified.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mt-4">
+                The terminal designed exclusively for institutional advisors. Cut through the noise, uncover hidden signals, and deliver alpha with unprecedented clarity.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+<button class="bg-primary text-on-primary font-semibold py-3 px-8 rounded flex items-center justify-center gap-2 hover:bg-primary-fixed transition-colors">
+                    Start Free Trial
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="bg-transparent border border-outline text-on-surface font-semibold py-3 px-8 rounded flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+                    Watch Demo
+                </button>
+</div>
+<div class="mt-16 w-full opacity-60">
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold mb-6">Trusted by leading quantitative teams</p>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12 items-center grayscale">
+<!-- Placeholder Logos using Text for simplicity, normally SVG -->
+<span class="text-xl font-black tracking-tighter">VANGUARD</span>
+<span class="text-xl font-black tracking-tighter">BLACKROCK</span>
+<span class="text-xl font-black tracking-tighter">AQR</span>
+<span class="text-xl font-black tracking-tighter">TWO SIGMA</span>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="flex flex-col gap-12">
+<div class="text-center mb-4">
+<h2 class="text-3xl font-display font-bold text-on-surface mb-4">Engineered for Precision</h2>
+<p class="text-on-surface-variant">Everything you need to execute institutional-grade strategies.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-2xl">article</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Curated Content</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Access exclusive research, macro analysis, and proprietary sentiment data streams, filtered for actionable insights.
+                    </p>
+<div class="mt-auto pt-6 border-t border-surface-variant">
+<a class="text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all" href="#">Explore Content <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container border border-primary/30 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group shadow-[0_0_40px_-15px_rgba(207,188,255,0.15)] ring-1 ring-primary/20">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded font-mono font-medium">TERMINAL</span>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Advanced Terminal</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Our flagship charting and backtesting engine. Ultra-low latency data feeds directly into your custom workspace.
+                    </p>
+<div class="mt-auto pt-6 border-t border-surface-variant">
+<a class="text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all" href="#">Launch Terminal <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-2xl">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Client Matching</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Intelligent routing algorithms connect your specialized strategies with suitable high-net-worth individuals and institutions.
+                    </p>
+<div class="mt-auto pt-6 border-t border-surface-variant">
+<a class="text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all" href="#">See Network <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="flex flex-col items-center gap-12 bg-surface-container-low border border-surface-variant rounded-xl p-8 md:p-12">
+<div class="flex flex-col items-center text-center">
+<div class="flex -space-x-3 mb-6">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low" data-alt="A small circular avatar placeholder image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMkWFJ_2svaMdCUNNB9iVbDHh1bN4AN4Sd15xlPBFLGPkobrv1Iac6oANGnXkcIQ378w3w-muRTQSva6Zw6EBltZTlNMz_RcGT4siyleTXjkOPp4DAZbQZeyLRcHJWj3uF3wS8UN0x21X8b7O56S56p_fBlktfoMIbXeLufIJWOPJRcEwiPTrgmOhcTmUr1VE81MyugVCwRaofv0yUnl-S8WT9lVJEmO9k6m1EcjHXNgJReGfeSbqj5lcwUPn-HCftI6jsd_XpsmZG"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low" data-alt="A small circular avatar placeholder image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApNmJhuF2hGNplkcECB414pYz2VDLkczD-GJzFwOiXixt4mxCvm2Yj4DpVNPJCM0SN9w7kiztBCi2sckEIOZVcWWrbfreaofTNLkHAlet3lDVJL4yDyp7Rtp3HO54zIVPUZi_WN8Y0NR3A8c-CNKH6_SjjB2uaEjEGmqXf40ARNimVVkciY5CEHd0LpmR0smeJHCu-mIi1GOpeqklYX8KIX-XzjECN2IKPmUjoWa68HH5Wqy2du4ysBNqg7iLmlBtuoLX6cIc6CrnO"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low" data-alt="A small circular avatar placeholder image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBboQ-K4zoxaObsnQrn1kOLnK-JffVHN_56EEBEUFXcS9QCSswfTTE6sZzpUK95gMBDQVf-IpSLHcFXFMrSv9Rvck2m8xz5lPHs_sxZEv3heIc1IBa0hV5SgZC8iaxxtCYaEXop-lG8gh8xbBOziTYFRfKlga65d0BpNS7YO1bc3vr0Uhybpnq7xLoAxgDY6qhVpRg_qEd3OtE1Uf9Px3u-AMtS8omcsWZ2GxoZpRZcY83ik9SLo-E7FZRXZRJlbmWhma1Djbg2YIEd"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low" data-alt="A small circular avatar placeholder image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjkb1InDoyL3KdLRSe7SL6gHdjSwqDkYdyS4JUJ_QmZ3Vom60QEAdH6fjOHPrhM73pCuAg1XhMlI3pReW_bPOUMtqMCa4BRywye1kUV4AIRD7l_4aq6rU6z9BBn1E3g5wxgvMpSWisinvLOwsEP1zVUuSuizxiYQilxptakRjX3cTlM8HPfky0OmTPai1dsu2LIFKUd15PFfpgHtjHotp3kxtyy_hGd0CK_X3DcKCKD9DFb94L6Px7SPLb-nD4IfbdFBMi0tuYDBgj"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-surface-container-highest flex items-center justify-center text-xs font-bold text-on-surface">+</div>
+</div>
+<h2 class="text-2xl md:text-3xl font-display font-bold text-on-surface mb-2">Join 2,000+ Registered Advisors</h2>
+<p class="text-on-surface-variant max-w-xl">The network is growing. Top-tier professionals rely on Invexora to stay ahead of market shifts.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+<!-- Testimonial 1 -->
+<div class="bg-surface border border-outline-variant p-6 rounded-[12px] flex flex-col gap-4">
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic text-sm flex-grow">"The signal clarity on the Terminal is unmatched. It has fundamentally streamlined our macro overlay process, allowing us to execute with much higher conviction."</p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-xs font-bold text-primary">EK</div>
+<div>
+<div class="text-sm font-bold text-on-surface">Elena K.</div>
+<div class="text-xs text-on-surface-variant">Portfolio Manager, Horizon Capital</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface border border-outline-variant p-6 rounded-[12px] flex flex-col gap-4">
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic text-sm flex-grow">"Finally, a platform built for serious practitioners. The matching network alone paid for the annual subscription within the first month. Highly recommended."</p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-xs font-bold text-primary">JM</div>
+<div>
+<div class="text-sm font-bold text-on-surface">James M.</div>
+<div class="text-xs text-on-surface-variant">Independent Advisor</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface border border-outline-variant p-6 rounded-[12px] flex flex-col gap-4">
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic text-sm flex-grow">"The dark mode aesthetic isn't just nice to look at, it's functional. I spend 8 hours a day staring at data, and this interface reduces fatigue while keeping the critical numbers legible."</p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-xs font-bold text-primary">SR</div>
+<div>
+<div class="text-sm font-bold text-on-surface">Sarah R.</div>
+<div class="text-xs text-on-surface-variant">Quantitative Analyst</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="bg-zinc-950 full-width py-8 border-t border-zinc-900 w-full flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto mt-auto">
+<div class="flex flex-col md:flex-row justify-between w-full items-center gap-6 md:gap-0">
+<div class="font-bold text-white tracking-tighter text-lg">Invexora</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-dm-sans text-xs text-zinc-600 hover:text-violet-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-dm-sans text-xs text-zinc-600 hover:text-violet-400 transition-colors" href="#">Terms of Service</a>
+<a class="font-dm-sans text-xs text-zinc-600 hover:text-violet-400 transition-colors" href="#">API Documentation</a>
+<a class="font-dm-sans text-xs text-zinc-600 hover:text-violet-400 transition-colors" href="#">Contact</a>
+</div>
+<div class="font-dm-sans text-xs text-zinc-500">
+                © 2024 Invexora Financial. Institutional Grade Analysis.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar from JSON (Mobile Only) -->
+<nav class="bg-zinc-950/95 backdrop-blur-md docked full-width bottom-0 rounded-t-lg border-t border-zinc-800 shadow-2xl md:hidden fixed bottom-0 left-0 w-full h-16 flex justify-around items-center px-6 z-50">
+<button class="flex flex-col items-center justify-center text-violet-500 active:bg-zinc-900 scale-95 active:transition-transform p-2 rounded">
+<span class="material-symbols-outlined text-xl mb-1" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-dm-sans text-[10px] font-bold">Terminal</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 active:bg-zinc-900 scale-95 active:transition-transform p-2 rounded">
+<span class="material-symbols-outlined text-xl mb-1">bar_chart</span>
+<span class="font-dm-sans text-[10px] font-bold">Markets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 active:bg-zinc-900 scale-95 active:transition-transform p-2 rounded">
+<span class="material-symbols-outlined text-xl mb-1">sensors</span>
+<span class="font-dm-sans text-[10px] font-bold">Signals</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 active:bg-zinc-900 scale-95 active:transition-transform p-2 rounded">
+<span class="material-symbols-outlined text-xl mb-1">person</span>
+<span class="font-dm-sans text-[10px] font-bold">Profile</span>
+</button>
+</nav>
+</body></html>
