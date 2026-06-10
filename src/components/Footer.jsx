@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,7 +33,7 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="flex flex-col gap-lg">
             <Link to="/" className="brand-logo-wrapper" style={{ alignSelf: 'flex-start' }}>
-              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Vittavardhana" className="brand-logo-img" />
+              <img src={logoImg} alt="Vittavardhana" className="brand-logo-img" />
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.4rem', fontWeight: 500, letterSpacing: '1px', color: '#fff', textTransform: 'uppercase' }}>Vittavardhanaa</span>
             </Link>
             <p className="footer-brand-desc">

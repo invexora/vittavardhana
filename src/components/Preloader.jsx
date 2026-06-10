@@ -3,8 +3,9 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 import { ErrorBoundary } from './ErrorBoundary';
+import modelUrl from '../assets/vitta-3d-model-opt.glb?url';
 
-const modelPath = import.meta.env.BASE_URL + 'vitta-3d-model-opt.glb';
+const modelPath = modelUrl;
 
 /* ───────────── Preloader 3D Mesh ───────────── */
 function PreloaderMesh() {
@@ -156,5 +157,5 @@ export default Preloader;
 
 // Preload model
 if (typeof window !== 'undefined') {
-  useGLTF.preload(import.meta.env.BASE_URL + 'vitta-3d-model-opt.glb');
+  useGLTF.preload(modelUrl);
 }

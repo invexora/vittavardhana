@@ -1,4 +1,6 @@
 import React from 'react';
+import { createScrollReveal } from '../../lib/animations';
+import founderImg from '../../assets/founder.png';
 
 const AboutFounder = () => {
   return (
@@ -28,7 +30,7 @@ const AboutFounder = () => {
               overflow: 'hidden'
             }}
           >
-            <img src={`${import.meta.env.BASE_URL}founder.png`} alt="Kishore V J" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={founderImg} alt="Kishore V J" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           
           {/* Biography Text */}

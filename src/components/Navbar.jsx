@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ const Navbar = () => {
         <div className="navbar-inner">
           {/* Logo */}
           <Link to="/" className="brand-logo-wrapper">
-            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Vittavardhana" className="brand-logo-img" />
+            <img src={logoImg} alt="Vittavardhana" className="brand-logo-img" />
             <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.4rem', fontWeight: 500, letterSpacing: '1px', color: '#fff', textTransform: 'uppercase' }}>Vittavardhanaa</span>
           </Link>
 
