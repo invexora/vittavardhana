@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="flex flex-col gap-lg">
             <Link to="/" className="brand-logo-wrapper" style={{ alignSelf: 'flex-start' }}>
-              <img src="/logo.png" alt="Vittavardhana" className="brand-logo-img" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Vittavardhana" className="brand-logo-img" />
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.4rem', fontWeight: 500, letterSpacing: '1px', color: '#fff', textTransform: 'uppercase' }}>Vittavardhanaa</span>
             </Link>
             <p className="footer-brand-desc">

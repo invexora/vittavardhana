@@ -6,7 +6,7 @@ import * as THREE from 'three';
 export function VittaLogoModel(props) {
   const group = useRef();
   // Load the model exactly as authored
-  const { scene } = useGLTF(import.meta.env.BASE_URL + 'vitta-3d-model.glb');
+  const { scene } = useGLTF(import.meta.env.BASE_URL + 'vitta-3d-model-opt.glb');
 
   // Calculate the scale without modifying or cloning the geometry
   const scale = useMemo(() => {
@@ -35,5 +35,5 @@ export function VittaLogoModel(props) {
 }
 
 if (typeof window !== 'undefined') {
-  useGLTF.preload(import.meta.env.BASE_URL + 'vitta-3d-model.glb');
+  useGLTF.preload(import.meta.env.BASE_URL + 'vitta-3d-model-opt.glb');
 }

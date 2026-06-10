@@ -28,7 +28,7 @@ const AboutFounder = () => {
               overflow: 'hidden'
             }}
           >
-            <img src="/founder.png" alt="Kishore V J" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={`${import.meta.env.BASE_URL}founder.png`} alt="Kishore V J" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           
           {/* Biography Text */}
