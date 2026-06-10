@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { ErrorBoundary } from '../components/ErrorBoundary';
 import {
   Shield, ArrowRight, Phone, CheckCircle,
   Landmark, Cpu, RotateCcw, FileSpreadsheet,
@@ -164,9 +165,11 @@ const Home = () => {
     <div className="overflow-hidden" style={{ backgroundColor: 'var(--color-canvas)', minHeight: '100vh' }}>
 
       {/* ═══════ 3D FIXED BACKGROUND (vanquish.so style) ═══════ */}
-      <Suspense fallback={<div className="hero-3d-loading" />}>
-        <HeroScene />
-      </Suspense>
+      <ErrorBoundary fallback={<div className="hero-3d-error-fallback" />}>
+        <Suspense fallback={<div className="hero-3d-loading" />}>
+          <HeroScene />
+        </Suspense>
+      </ErrorBoundary>
 
       {/* ═══════ 1. HERO — Immersive 3D Fullscreen ═══════ */}
       <section className="hero hero-immersive" id="hero-top">

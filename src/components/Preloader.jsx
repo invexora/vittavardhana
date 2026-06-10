@@ -2,6 +2,7 @@ import { useState, useEffect, Suspense, useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Environment } from '@react-three/drei';
 import * as THREE from 'three';
+import { ErrorBoundary } from './ErrorBoundary';
 
 const modelPath = import.meta.env.BASE_URL + 'vitta-3d-model.glb';
 
@@ -131,7 +132,9 @@ const Preloader = ({ onComplete }) => {
             <ambientLight intensity={0.3} color="#ffe8cc" />
             <directionalLight position={[5, 8, 5]} intensity={1.8} color="#ffeedb" />
             <directionalLight position={[-5, 3, -3]} intensity={0.5} color="#d32f2f" />
-            <PreloaderMesh />
+            <ErrorBoundary fallback={null}>
+              <PreloaderMesh />
+            </ErrorBoundary>
             <Environment preset="city" environmentIntensity={0.5} />
           </Suspense>
         </Canvas>
