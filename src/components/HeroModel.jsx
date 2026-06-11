@@ -17,19 +17,21 @@ function ModelMesh({ mouse }) {
   // Clone the scene to avoid shared-state issues
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true);
-    // Apply premium metallic gold material
+    // Keep the original material to avoid losing normal/bump maps (which causes cracks),
+    // but we can still enable shadows and enhance the environment map reflection.
     clone.traverse((child) => {
       if (child.isMesh) {
-        child.material = new THREE.MeshStandardMaterial({
-          color: new THREE.Color('#c5a880'), // Premium Vittavardhana Gold Accent
-          metalness: 0.9,
-          roughness: 0.15,
-          envMapIntensity: 2.0,
-          emissive: new THREE.Color('#2b1d0a'),
-          emissiveIntensity: 0.1,
-        });
         child.castShadow = true;
         child.receiveShadow = true;
+        
+        if (child.material) {
+          // Enhance the existing material's environment reflection for a premium look
+          const mats = Array.isArray(child.material) ? child.material : [child.material];
+          mats.forEach(mat => {
+            mat.envMapIntensity = 2.0;
+            mat.needsUpdate = true;
+          });
+        }
       }
     });
     return clone;
