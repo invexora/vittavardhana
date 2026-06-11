@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import AboutHero from '../components/about/AboutHero';
-import AboutNarrative from '../components/about/AboutNarrative';
 import AboutTimeline from '../components/about/AboutTimeline';
 import AboutMissionGoal from '../components/about/AboutMissionGoal';
 import AboutCoreValues from '../components/about/AboutCoreValues';
@@ -25,7 +24,6 @@ const AboutUs = () => {
   return (
     <div className="about-page">
       <AboutHero />
-      <AboutNarrative />
       <AboutTimeline />
       <AboutFounder />
       <AboutMissionGoal />
